@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Finance Tracker</title>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="wrapper_top">
+            <div class="wrapper_bg"></div>
+            <div class="info">
+                <p class="info__text">Budget in <span class="current_date">February 2020</span>.</p>
+                <div class="total">
+                    <h3 class="total__balance">+ 4,900.00</h3>
+                    <div class="total__incomes">
+                        <p class="total__text">Incomes</p>
+                        <p class="total__incomes--value">+ 0.00</p>
+                    </div>
+                    <div class="total__expenses">
+                        <p class="total__text">Expenses</p>
+                        <p class="total__expenses--value">- 0.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper_bottom">
+            <div class="add">
+                <div class="add__wrapper">
+                    <select class="add__select form-inline">
+                        <option>+</option>
+                        <option>-</option>
+                    </select>
+                    <input type="text" class="add__item form-inline" placeholder="Add budget item" />
+                    <input type="number" class="add__value form-inline" placeholder="Value" />
+                    <button type="button" class="add__btn button">
+                        <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center list-wrapper"> 
+                    <div class="col-12 col-md-6">
+                        <h6 class="list__title list__title--inc">Incomes:</h6>
+                        <ul class="list__income list-group">
+                            
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <h6 class="list__title list__title--exp">Expenses:</h6>
+                        <ul class="list__expenses list-group"></ul>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+        <script src="main.js"></script>
+        
+    </body>
+</html>

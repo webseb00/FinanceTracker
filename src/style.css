@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --income-color: #2193b0;
+    --expense-color: #FF6666;
+    --light-grey: #F2F2F2;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+button:focus {
+    outline: none;
+}
+
+button {
+    border: none;
+    background: none;
+    display: flex;
+}
+
+.wrapper_top {
+    position: relative;
+}
+
+.wrapper_bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #536976; 
+    background: -webkit-linear-gradient(to right, #536976, #292e49); 
+    background: linear-gradient(to right, #536976, #292e49);
+    z-index: -1;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ecf0f1;
+    padding: 40px 0;
+}
+
+.info__text {
+    font-size: 26px;
+}
+
+.total {
+    width: 400px;
+}
+
+.total__balance {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 36px;
+}
+
+.total__incomes,
+.total__expenses {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.total__incomes {
+    background: var(--income-color);
+    margin-bottom: 10px;
+}
+
+.total__expenses {
+    background: var(--expense-color);
+}
+
+.add {
+    display: flex;
+    justify-content: center;
+    background: #ecf0f1;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+
+.add__wrapper {
+    display: flex;
+}
+
+.add__item {
+    width: 300px;
+}
+
+.add__value {
+    width: 100px;
+}
+
+.add__btn {
+    font-size: 30px;
+    color: #2193b0;
+}
+
+.form-inline {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.list > .list__item:nth-child(even) {
+    background: var(--light-grey);
+}
+
+.list__title {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.list__title--inc {
+    color: var(--income-color);
+}
+
+.list__title--exp {
+    color: var(--expense-color);
+}
+
+.list__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 0.65rem;
+    font-size: 1.2rem;
+}
+
+.list__right {
+    display: flex;
+    align-items: center;
+}
+
+.list__delete {
+    opacity: 0;
+}
+
+.list__value {
+    margin-right: -1.55rem;
+    transition: .4s;
+}
+
+.list__value--inc {
+    color: var(--income-color);
+}
+
+.list__value--exp {
+    color: var(--expense-color);
+}
+
+.list__delete {
+    margin-top: 2px;
+    margin-left: 5px;
+    transition-delay: .2s;
+    transition: .4s;
+}
+
+.list__delete--btn > ion-icon {
+    font-size: 1.5rem;
+    color: #34495e;
+}
+
+.list__item:hover .list__value {
+    margin-right: 0;
+} 
+
+.list__item:hover .list__delete {
+    opacity: 1;
+}
