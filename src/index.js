@@ -226,7 +226,7 @@ const UICtrl = (function() {
         },
         showTotalBalance: function(balance) {
             let type = Math.abs(balance).toFixed(2);
-            DOMSelectors.totalBalance.innerText = balance > 0 ? `+ ${type}` : `- ${type}`;
+            DOMSelectors.totalBalance.innerText = balance >= 0 ? `+ ${type}` : `- ${type}`;
         },
         showTotalIncomes: function(incomes) {
             DOMSelectors.totalIncomes.innerText = `+ ${incomes}`;
