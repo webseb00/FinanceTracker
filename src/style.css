@@ -103,7 +103,7 @@ button {
 
 .add__btn {
     font-size: 30px;
-    color: #2193b0;
+    color: var(--income-color);
 }
 
 .form-inline {
@@ -179,4 +179,20 @@ button {
 
 .list__item:hover .list__delete {
     opacity: 1;
+}
+
+.blue-outline {
+    outline-color: var(--income-color);
+}
+
+.blue-color {
+    color: var(--income-color);
+}
+
+.red-outline {
+    outline-color: var(--expense-color);
+}
+
+.red-color {
+    color: var(--expense-color);
 }

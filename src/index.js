@@ -68,7 +68,7 @@ const ItemCtrl = (function() {
             const newItem = new Item(description, Number.parseFloat(value), type, genID);
             // add new item to array
             appData.items.push(newItem);
-            console.log(appData.items);
+
             return newItem;
         },
         removeItem: function(id) {
@@ -155,21 +155,20 @@ const UICtrl = (function() {
             DOMSelectors.currentDate.textContent = `${months[month]} ${year}`;
         },
         addInputOutline: function() {
-           const { formInputs, addSelectType, addItemButton } = DOMSelectors;
-           if(addSelectType.value === '+') {
-               // change input outline color
-                for(const inputs of formInputs) {
-                    inputs.style.outlineColor = "#2193b0";
-                }
-                // change button color
-                addItemButton.style.color = "#2193b0";
-           } else {
-                for(const inputs of formInputs) {
-                    inputs.style.outlineColor = "#FF6666";
-                }
-                addItemButton.style.color = "#FF6666";
-           }
-            
+            const { addItemInput, addValueInput, addSelectType, addItemButton } = DOMSelectors;
+            const fields = [addItemInput, addValueInput, addSelectType];
+
+            if(addSelectType.value === "+") {
+                fields.forEach(field => field.classList.add('blue-outline'));
+                addItemButton.classList.add('blue-color');
+                fields.forEach(field => field.classList.remove('red-outline'));
+                addItemButton.classList.remove('red-color');
+            } else {
+                fields.forEach(field => field.classList.add('red-outline'));
+                addItemButton.classList.add('red-color');
+                fields.forEach(field => field.classList.remove('blue-outline'));
+                addItemButton.classList.remove('blue-color');
+            }
         },
         showItems: function(items) {
             let element,
@@ -330,6 +329,7 @@ const AppCtrl = (function(UICtrl, ItemCtrl) {
 
     return {
         init: function() {
+            UICtrl.addInputOutline();
             // reset fields and inputs
             UICtrl.resetFields();
             UICtrl.clearInputs();
